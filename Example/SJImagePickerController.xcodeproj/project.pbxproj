@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0450A63923CC69C2000889EF /* SJImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0450A63823CC69C2000889EF /* SJImageResource.bundle */; };
+		0450A63F23CC69E4000889EF /* SJAlbumsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63A23CC69E4000889EF /* SJAlbumsListCell.swift */; };
+		0450A64023CC69E4000889EF /* SJPhotoBrowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63B23CC69E4000889EF /* SJPhotoBrowerCell.swift */; };
+		0450A64123CC69E4000889EF /* SJSelectedAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63C23CC69E4000889EF /* SJSelectedAlbumsCell.swift */; };
+		0450A64223CC69E4000889EF /* SJAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63D23CC69E4000889EF /* SJAlbumsCell.swift */; };
+		0450A64723CC69EE000889EF /* SJImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64423CC69EE000889EF /* SJImagePickerController.swift */; };
+		0450A64823CC69EE000889EF /* SJAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64523CC69EE000889EF /* SJAlbumsViewController.swift */; };
+		0450A64923CC69EE000889EF /* SJPhotoBrowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64623CC69EE000889EF /* SJPhotoBrowerViewController.swift */; };
+		0450A64C23CC69F7000889EF /* SJAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64A23CC69F7000889EF /* SJAsset.swift */; };
+		0450A64D23CC69F7000889EF /* SJCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64B23CC69F7000889EF /* SJCollection.swift */; };
+		0450A65223CC6A07000889EF /* SJTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64E23CC6A07000889EF /* SJTitleButton.swift */; };
+		0450A65323CC6A07000889EF /* SJHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A64F23CC6A07000889EF /* SJHelpers.swift */; };
+		0450A65423CC6A07000889EF /* SJAssetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A65023CC6A07000889EF /* SJAssetStore.swift */; };
+		0450A65523CC6A07000889EF /* SJImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A65123CC6A07000889EF /* SJImageManager.swift */; };
+		0450A65723CC6A24000889EF /* SJAssetCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A65623CC6A24000889EF /* SJAssetCollection.swift */; };
+		0450A65C23CC6B25000889EF /* SJAlbumsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A65B23CC6B25000889EF /* SJAlbumsListView.swift */; };
+		0450A65E23CC6B69000889EF /* SJSelectedAlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A65D23CC6B69000889EF /* SJSelectedAlbumsView.swift */; };
+		0474AE9D23A0D98600792F34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AE9C23A0D98600792F34 /* AppDelegate.swift */; };
+		0474AEA123A0D98600792F34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEA023A0D98600792F34 /* ViewController.swift */; };
+		0474AEA423A0D98600792F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474AEA223A0D98600792F34 /* Main.storyboard */; };
+		0474AEA623A0D98C00792F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0474AEA523A0D98C00792F34 /* Assets.xcassets */; };
+		0474AEA923A0D98C00792F34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474AEA723A0D98C00792F34 /* LaunchScreen.storyboard */; };
+		0474AEB423A0D98D00792F34 /* SJImagePickerControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEB323A0D98D00792F34 /* SJImagePickerControllerTests.swift */; };
+		0474AEBF23A0D98D00792F34 /* SJImagePickerControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEBE23A0D98D00792F34 /* SJImagePickerControllerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0474AEB023A0D98D00792F34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0474AE9123A0D98600792F34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0474AE9823A0D98600792F34;
+			remoteInfo = SJImagePickerController;
+		};
+		0474AEBB23A0D98D00792F34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0474AE9123A0D98600792F34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0474AE9823A0D98600792F34;
+			remoteInfo = SJImagePickerController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0450A63823CC69C2000889EF /* SJImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SJImageResource.bundle; path = ../../SJImagePickerViewController/SJImageResource.bundle; sourceTree = "<group>"; };
+		0450A63A23CC69E4000889EF /* SJAlbumsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAlbumsListCell.swift; path = ../../../SJImagePickerViewController/SJAlbumsListCell.swift; sourceTree = "<group>"; };
+		0450A63B23CC69E4000889EF /* SJPhotoBrowerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJPhotoBrowerCell.swift; path = ../../../SJImagePickerViewController/SJPhotoBrowerCell.swift; sourceTree = "<group>"; };
+		0450A63C23CC69E4000889EF /* SJSelectedAlbumsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJSelectedAlbumsCell.swift; path = ../../../SJImagePickerViewController/SJSelectedAlbumsCell.swift; sourceTree = "<group>"; };
+		0450A63D23CC69E4000889EF /* SJAlbumsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAlbumsCell.swift; path = ../../../SJImagePickerViewController/SJAlbumsCell.swift; sourceTree = "<group>"; };
+		0450A64423CC69EE000889EF /* SJImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJImagePickerController.swift; path = ../../../SJImagePickerViewController/SJImagePickerController.swift; sourceTree = "<group>"; };
+		0450A64523CC69EE000889EF /* SJAlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAlbumsViewController.swift; path = ../../../SJImagePickerViewController/SJAlbumsViewController.swift; sourceTree = "<group>"; };
+		0450A64623CC69EE000889EF /* SJPhotoBrowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJPhotoBrowerViewController.swift; path = ../../../SJImagePickerViewController/SJPhotoBrowerViewController.swift; sourceTree = "<group>"; };
+		0450A64A23CC69F7000889EF /* SJAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAsset.swift; path = ../../../SJImagePickerViewController/SJAsset.swift; sourceTree = "<group>"; };
+		0450A64B23CC69F7000889EF /* SJCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJCollection.swift; path = ../../../SJImagePickerViewController/SJCollection.swift; sourceTree = "<group>"; };
+		0450A64E23CC6A07000889EF /* SJTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJTitleButton.swift; path = ../../../SJImagePickerViewController/SJTitleButton.swift; sourceTree = "<group>"; };
+		0450A64F23CC6A07000889EF /* SJHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJHelpers.swift; path = ../../../SJImagePickerViewController/SJHelpers.swift; sourceTree = "<group>"; };
+		0450A65023CC6A07000889EF /* SJAssetStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAssetStore.swift; path = ../../../SJImagePickerViewController/SJAssetStore.swift; sourceTree = "<group>"; };
+		0450A65123CC6A07000889EF /* SJImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJImageManager.swift; path = ../../../SJImagePickerViewController/SJImageManager.swift; sourceTree = "<group>"; };
+		0450A65623CC6A24000889EF /* SJAssetCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAssetCollection.swift; path = ../../../SJImagePickerViewController/SJAssetCollection.swift; sourceTree = "<group>"; };
+		0450A65B23CC6B25000889EF /* SJAlbumsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAlbumsListView.swift; path = ../../../SJImagePickerViewController/SJAlbumsListView.swift; sourceTree = "<group>"; };
+		0450A65D23CC6B69000889EF /* SJSelectedAlbumsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJSelectedAlbumsView.swift; path = ../../../SJImagePickerViewController/SJSelectedAlbumsView.swift; sourceTree = "<group>"; };
+		0474AE9923A0D98600792F34 /* SJImagePickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJImagePickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0474AE9C23A0D98600792F34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0474AEA023A0D98600792F34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0474AEA323A0D98600792F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0474AEA523A0D98C00792F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0474AEA823A0D98C00792F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0474AEAA23A0D98C00792F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0474AEAF23A0D98D00792F34 /* SJImagePickerControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SJImagePickerControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0474AEB323A0D98D00792F34 /* SJImagePickerControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJImagePickerControllerTests.swift; sourceTree = "<group>"; };
+		0474AEB523A0D98D00792F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0474AEBA23A0D98D00792F34 /* SJImagePickerControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SJImagePickerControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0474AEBE23A0D98D00792F34 /* SJImagePickerControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJImagePickerControllerUITests.swift; sourceTree = "<group>"; };
+		0474AEC023A0D98D00792F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048AE2E423C8649A00567D48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		048AE2E523C8649A00567D48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0474AE9623A0D98600792F34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0474AEAC23A0D98D00792F34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0474AEB723A0D98D00792F34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0474AE9023A0D98600792F34 = {
+			isa = PBXGroup;
+			children = (
+				0474AE9B23A0D98600792F34 /* SJImagePickerController */,
+				0474AEB223A0D98D00792F34 /* SJImagePickerControllerTests */,
+				0474AEBD23A0D98D00792F34 /* SJImagePickerControllerUITests */,
+				0474AE9A23A0D98600792F34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0474AE9A23A0D98600792F34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0474AE9923A0D98600792F34 /* SJImagePickerController.app */,
+				0474AEAF23A0D98D00792F34 /* SJImagePickerControllerTests.xctest */,
+				0474AEBA23A0D98D00792F34 /* SJImagePickerControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0474AE9B23A0D98600792F34 /* SJImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				0450A63823CC69C2000889EF /* SJImageResource.bundle */,
+				048AE2E323C81DE900567D48 /* Utils */,
+				0474AEE023A6694A00792F34 /* Model */,
+				0474AEDF23A6694500792F34 /* View */,
+				0474AECC23A0D9A400792F34 /* Controller */,
+				0474AE9C23A0D98600792F34 /* AppDelegate.swift */,
+				0474AEA023A0D98600792F34 /* ViewController.swift */,
+				0474AEA223A0D98600792F34 /* Main.storyboard */,
+				0474AEA523A0D98C00792F34 /* Assets.xcassets */,
+				0474AEA723A0D98C00792F34 /* LaunchScreen.storyboard */,
+				0474AEAA23A0D98C00792F34 /* Info.plist */,
+			);
+			path = SJImagePickerController;
+			sourceTree = "<group>";
+		};
+		0474AEB223A0D98D00792F34 /* SJImagePickerControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				0474AEB323A0D98D00792F34 /* SJImagePickerControllerTests.swift */,
+				0474AEB523A0D98D00792F34 /* Info.plist */,
+			);
+			path = SJImagePickerControllerTests;
+			sourceTree = "<group>";
+		};
+		0474AEBD23A0D98D00792F34 /* SJImagePickerControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0474AEBE23A0D98D00792F34 /* SJImagePickerControllerUITests.swift */,
+				0474AEC023A0D98D00792F34 /* Info.plist */,
+			);
+			path = SJImagePickerControllerUITests;
+			sourceTree = "<group>";
+		};
+		0474AECC23A0D9A400792F34 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0450A64523CC69EE000889EF /* SJAlbumsViewController.swift */,
+				0450A64423CC69EE000889EF /* SJImagePickerController.swift */,
+				0450A64623CC69EE000889EF /* SJPhotoBrowerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0474AEDF23A6694500792F34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0450A63D23CC69E4000889EF /* SJAlbumsCell.swift */,
+				0450A63A23CC69E4000889EF /* SJAlbumsListCell.swift */,
+				0450A63B23CC69E4000889EF /* SJPhotoBrowerCell.swift */,
+				0450A63C23CC69E4000889EF /* SJSelectedAlbumsCell.swift */,
+				0450A65B23CC6B25000889EF /* SJAlbumsListView.swift */,
+				0450A65D23CC6B69000889EF /* SJSelectedAlbumsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0474AEE023A6694A00792F34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0450A64A23CC69F7000889EF /* SJAsset.swift */,
+				0450A64B23CC69F7000889EF /* SJCollection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		048AE2E323C81DE900567D48 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0450A65023CC6A07000889EF /* SJAssetStore.swift */,
+				0450A64F23CC6A07000889EF /* SJHelpers.swift */,
+				0450A65123CC6A07000889EF /* SJImageManager.swift */,
+				0450A64E23CC6A07000889EF /* SJTitleButton.swift */,
+				0450A65623CC6A24000889EF /* SJAssetCollection.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0474AE9823A0D98600792F34 /* SJImagePickerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0474AEC323A0D98D00792F34 /* Build configuration list for PBXNativeTarget "SJImagePickerController" */;
+			buildPhases = (
+				0474AE9523A0D98600792F34 /* Sources */,
+				0474AE9623A0D98600792F34 /* Frameworks */,
+				0474AE9723A0D98600792F34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SJImagePickerController;
+			productName = SJImagePickerController;
+			productReference = 0474AE9923A0D98600792F34 /* SJImagePickerController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0474AEAE23A0D98D00792F34 /* SJImagePickerControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0474AEC623A0D98D00792F34 /* Build configuration list for PBXNativeTarget "SJImagePickerControllerTests" */;
+			buildPhases = (
+				0474AEAB23A0D98D00792F34 /* Sources */,
+				0474AEAC23A0D98D00792F34 /* Frameworks */,
+				0474AEAD23A0D98D00792F34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0474AEB123A0D98D00792F34 /* PBXTargetDependency */,
+			);
+			name = SJImagePickerControllerTests;
+			productName = SJImagePickerControllerTests;
+			productReference = 0474AEAF23A0D98D00792F34 /* SJImagePickerControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0474AEB923A0D98D00792F34 /* SJImagePickerControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0474AEC923A0D98D00792F34 /* Build configuration list for PBXNativeTarget "SJImagePickerControllerUITests" */;
+			buildPhases = (
+				0474AEB623A0D98D00792F34 /* Sources */,
+				0474AEB723A0D98D00792F34 /* Frameworks */,
+				0474AEB823A0D98D00792F34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0474AEBC23A0D98D00792F34 /* PBXTargetDependency */,
+			);
+			name = SJImagePickerControllerUITests;
+			productName = SJImagePickerControllerUITests;
+			productReference = 0474AEBA23A0D98D00792F34 /* SJImagePickerControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0474AE9123A0D98600792F34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = sheng;
+				TargetAttributes = {
+					0474AE9823A0D98600792F34 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					0474AEAE23A0D98D00792F34 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 0474AE9823A0D98600792F34;
+					};
+					0474AEB923A0D98D00792F34 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 0474AE9823A0D98600792F34;
+					};
+				};
+			};
+			buildConfigurationList = 0474AE9423A0D98600792F34 /* Build configuration list for PBXProject "SJImagePickerController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 0474AE9023A0D98600792F34;
+			productRefGroup = 0474AE9A23A0D98600792F34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0474AE9823A0D98600792F34 /* SJImagePickerController */,
+				0474AEAE23A0D98D00792F34 /* SJImagePickerControllerTests */,
+				0474AEB923A0D98D00792F34 /* SJImagePickerControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0474AE9723A0D98600792F34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0474AEA923A0D98C00792F34 /* LaunchScreen.storyboard in Resources */,
+				0474AEA623A0D98C00792F34 /* Assets.xcassets in Resources */,
+				0450A63923CC69C2000889EF /* SJImageResource.bundle in Resources */,
+				0474AEA423A0D98600792F34 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0474AEAD23A0D98D00792F34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0474AEB823A0D98D00792F34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0474AE9523A0D98600792F34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0474AEA123A0D98600792F34 /* ViewController.swift in Sources */,
+				0450A64123CC69E4000889EF /* SJSelectedAlbumsCell.swift in Sources */,
+				0450A65323CC6A07000889EF /* SJHelpers.swift in Sources */,
+				0450A65723CC6A24000889EF /* SJAssetCollection.swift in Sources */,
+				0450A64D23CC69F7000889EF /* SJCollection.swift in Sources */,
+				0450A64723CC69EE000889EF /* SJImagePickerController.swift in Sources */,
+				0450A65423CC6A07000889EF /* SJAssetStore.swift in Sources */,
+				0450A64223CC69E4000889EF /* SJAlbumsCell.swift in Sources */,
+				0474AE9D23A0D98600792F34 /* AppDelegate.swift in Sources */,
+				0450A65C23CC6B25000889EF /* SJAlbumsListView.swift in Sources */,
+				0450A64023CC69E4000889EF /* SJPhotoBrowerCell.swift in Sources */,
+				0450A65223CC6A07000889EF /* SJTitleButton.swift in Sources */,
+				0450A65523CC6A07000889EF /* SJImageManager.swift in Sources */,
+				0450A64C23CC69F7000889EF /* SJAsset.swift in Sources */,
+				0450A65E23CC6B69000889EF /* SJSelectedAlbumsView.swift in Sources */,
+				0450A63F23CC69E4000889EF /* SJAlbumsListCell.swift in Sources */,
+				0450A64923CC69EE000889EF /* SJPhotoBrowerViewController.swift in Sources */,
+				0450A64823CC69EE000889EF /* SJAlbumsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0474AEAB23A0D98D00792F34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0474AEB423A0D98D00792F34 /* SJImagePickerControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0474AEB623A0D98D00792F34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0474AEBF23A0D98D00792F34 /* SJImagePickerControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0474AEB123A0D98D00792F34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0474AE9823A0D98600792F34 /* SJImagePickerController */;
+			targetProxy = 0474AEB023A0D98D00792F34 /* PBXContainerItemProxy */;
+		};
+		0474AEBC23A0D98D00792F34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0474AE9823A0D98600792F34 /* SJImagePickerController */;
+			targetProxy = 0474AEBB23A0D98D00792F34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0474AEA223A0D98600792F34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0474AEA323A0D98600792F34 /* Base */,
+				048AE2E423C8649A00567D48 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0474AEA723A0D98C00792F34 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0474AEA823A0D98C00792F34 /* Base */,
+				048AE2E523C8649A00567D48 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0474AEC123A0D98D00792F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0474AEC223A0D98D00792F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0474AEC423A0D98D00792F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				INFOPLIST_FILE = SJImagePickerController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheng.SJImagePickerController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0474AEC523A0D98D00792F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				INFOPLIST_FILE = SJImagePickerController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheng.SJImagePickerController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0474AEC723A0D98D00792F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				INFOPLIST_FILE = SJImagePickerControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.everobo.SJImagePickerControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SJImagePickerController.app/SJImagePickerController";
+			};
+			name = Debug;
+		};
+		0474AEC823A0D98D00792F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				INFOPLIST_FILE = SJImagePickerControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.everobo.SJImagePickerControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SJImagePickerController.app/SJImagePickerController";
+			};
+			name = Release;
+		};
+		0474AECA23A0D98D00792F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				INFOPLIST_FILE = SJImagePickerControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.everobo.SJImagePickerControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SJImagePickerController;
+			};
+			name = Debug;
+		};
+		0474AECB23A0D98D00792F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				INFOPLIST_FILE = SJImagePickerControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.everobo.SJImagePickerControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SJImagePickerController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0474AE9423A0D98600792F34 /* Build configuration list for PBXProject "SJImagePickerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0474AEC123A0D98D00792F34 /* Debug */,
+				0474AEC223A0D98D00792F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0474AEC323A0D98D00792F34 /* Build configuration list for PBXNativeTarget "SJImagePickerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0474AEC423A0D98D00792F34 /* Debug */,
+				0474AEC523A0D98D00792F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0474AEC623A0D98D00792F34 /* Build configuration list for PBXNativeTarget "SJImagePickerControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0474AEC723A0D98D00792F34 /* Debug */,
+				0474AEC823A0D98D00792F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0474AEC923A0D98D00792F34 /* Build configuration list for PBXNativeTarget "SJImagePickerControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0474AECA23A0D98D00792F34 /* Debug */,
+				0474AECB23A0D98D00792F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0474AE9123A0D98600792F34 /* Project object */;
+}
