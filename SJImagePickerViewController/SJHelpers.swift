@@ -8,20 +8,6 @@
 import Foundation
 import UIKit
 
-extension String {
-    var localized: String {
-        if let url = Bundle.main.url(forResource: "SJImageResource", withExtension: "bundle"), let bundle = Bundle(url: url) {
-            return bundle.localizedString(forKey: self, value: nil, table: nil)
-        } else {
-            fatalError("check SJImageResource.bundle Localizable.strings")
-        }
-    }
-
-    func localized(with argument: Int) -> String {
-        String.localizedStringWithFormat(localized, argument)
-    }
-}
-
 extension UINavigationController {
     var sjIPC: SJImagePickerController {
         if let nav = self as? SJImagePickerController {
@@ -41,6 +27,29 @@ extension UIAlertController {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: style)
         actions.forEach(alert.addAction)
         viewController.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension Bundle {
+    static let imageResourceBundle: Bundle = {
+        guard let path = Bundle(for: SJImageManager.self).path(forResource: "SJImageResource", ofType: "bundle"), let bundle = Bundle(path: path) else {
+            fatalError("check SJImageResource.bundle")
+        }
+        return bundle
+    }()
+}
+enum Localization {
+    static func string(_ key: String) -> String {
+        return NSLocalizedString(key, bundle: .imageResourceBundle, comment: "")
+    }
+    static func string(_ key: String, number: Int) -> String {
+        return String.localizedStringWithFormat(string(key), number)
+    }
+}
+
+extension UIImage {
+    convenience init?(bundleNamed name: String, compatibleWith trait: UITraitCollection? = nil) {
+        self.init(named: name, in: .imageResourceBundle, compatibleWith: trait)
     }
 }
 

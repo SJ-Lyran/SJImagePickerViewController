@@ -23,7 +23,7 @@ extension SJImagePickerController.InfoKey {
     public static let phAsset = SJImagePickerController.InfoKey(rawValue: "phAsset")
 }
 
-protocol SJImagePickerControllerDelegate: class {
+public protocol SJImagePickerControllerDelegate: class {
     func imagePickerController(_ picker: SJImagePickerController, didFinishPickingMediaWithInfo info: [SJImagePickerController.InfoKey : Any])
     func imagePickerControllerDidCancel(_ picker: SJImagePickerController)
 }
@@ -61,7 +61,7 @@ open class SJImagePickerController: UINavigationController {
         pickerDelegate?.imagePickerController(self, didFinishPickingMediaWithInfo: info)
     }
 
-    convenience init(delegate: SJImagePickerControllerDelegate) {
+    public convenience init(delegate: SJImagePickerControllerDelegate) {
         self.init()
         pickerDelegate = delegate
     }

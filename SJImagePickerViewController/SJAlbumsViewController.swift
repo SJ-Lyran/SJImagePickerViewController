@@ -38,17 +38,17 @@ final class SJAlbumsViewController: UIViewController {
     }
 
     private func askPermission() {
-        let cancelAction = UIAlertAction(title: "ok".localized, style: .cancel) { (_) in
+        let cancelAction = UIAlertAction(title: Localization.string("ok"), style: .cancel) { (_) in
             self.dismiss(animated: true, completion: nil)
         }
-        let settingAction = UIAlertAction(title: "settings".localized, style: .default) { (_) in
+        let settingAction = UIAlertAction(title: Localization.string("settings"), style: .default) { (_) in
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             }
         }
-        UIAlertController.present(in: self, title: nil, message: "privacy.photoLibrary.message".localized, actions: [cancelAction, settingAction])
+        UIAlertController.present(in: self, title: nil, message: Localization.string("privacy.photoLibrary.message"), actions: [cancelAction, settingAction])
     }
 
     private func checkAuthorizationStatus() {
@@ -77,10 +77,11 @@ final class SJAlbumsViewController: UIViewController {
     @objc private func handleAssets(_ notification: Notification) {
         guard let assets = notification.object as? SJAssetStore else { return }
         if !assets.assets.isEmpty {
-            doneItem.title = "(\(assets.assets.count))\("done".localized)"
+
+            doneItem.title = "(\(assets.assets.count))\(Localization.string("done"))"
             navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
-            doneItem.title = "done".localized
+            doneItem.title = Localization.string("done")
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
 
@@ -127,11 +128,11 @@ final class SJAlbumsViewController: UIViewController {
         albumslistHeightConstraintLow.isActive = true
     }
 
-    lazy var doneItem = UIBarButtonItem(title: "done".localized, style: .done, target: self, action: #selector(doneAction))
+    lazy var doneItem = UIBarButtonItem(title: Localization.string("done"), style: .done, target: self, action: #selector(doneAction))
 
     private func setupNavigationItems() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancel".localized, style: .done, target: self, action: #selector(cancelPick))
-        titleButton.setTitle("allPhotos".localized, for: .normal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: Localization.string("cancel"), style: .done, target: self, action: #selector(cancelPick))
+        titleButton.setTitle(Localization.string("allPhotos"), for: .normal)
         navigationItem.titleView = titleButton
         navigationItem.rightBarButtonItem = doneItem
         navigationItem.rightBarButtonItem?.isEnabled = false
@@ -149,8 +150,14 @@ final class SJAlbumsViewController: UIViewController {
     }
 
     private func setupUI() {
-        collectionView.frame = view.frame
         view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 
     lazy var collectionView: UICollectionView = {
@@ -233,9 +240,9 @@ extension SJAlbumsViewController: SJAlbumsCellDelegate {
         } else {
             let maximum = navigationController?.sjIPC.maximumSelectedPhotoCount ?? 0
             if selectedAssets.assets.count >= maximum {
-                let cancelAction = UIAlertAction(title: "ok".localized, style: .cancel, handler: nil)
+                let cancelAction = UIAlertAction(title: Localization.string("ok"), style: .cancel, handler: nil)
                 UIAlertController.present(in: self, title: nil, message:
-                    "select.maximum".localized(with: maximum), actions: [cancelAction])
+                    Localization.string("select.maximum", number: maximum), actions: [cancelAction])
             } else {
                 selectedAssets.append(asset)
             }

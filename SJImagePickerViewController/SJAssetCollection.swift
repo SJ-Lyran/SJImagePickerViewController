@@ -13,7 +13,7 @@ final class SJAssetCollection {
     private(set) var assets = [SJCollection]()
     init() { getAlbumsList() }
     private func getAlbumsList() {
-        let photos = SJCollection(albumTitle: "allPhotos".localized, assetResult: allPhotos)
+        let photos = SJCollection(albumTitle: Localization.string("allPhotos"), assetResult: allPhotos)
         photos.isSelected = true
         assets = [photos]
         userCollections.enumerateObjects(options: .concurrent) { [weak self] (collection, idx, stop) in

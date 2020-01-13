@@ -70,7 +70,7 @@ class SJSelectedAlbumsCell: UICollectionViewCell {
 
     lazy var deleteButton: UIButton = {
         let button = UIButton(type: .custom)
-        let minusImage = UIImage(named: "SJImageResource.bundle/minus_circle")
+        let minusImage = UIImage(bundleNamed: "minus_circle")
         button.setImage(minusImage, for: .normal)
         button.addTarget(self, action: #selector(deleteItem(sender:)), for: .touchUpInside)
         return button

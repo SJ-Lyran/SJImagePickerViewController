@@ -66,8 +66,8 @@ class SJAlbumsCell: UICollectionViewCell {
         button.setTitle("", for: .selected)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.isUserInteractionEnabled = false
-        button.setBackgroundImage(UIImage(named: "SJImageResource.bundle/circle"), for: .normal)
-        button.setBackgroundImage(UIImage(named: "SJImageResource.bundle/circle.fill"), for: .selected)
+        button.setBackgroundImage(UIImage(bundleNamed: "circle"), for: .normal)
+        button.setBackgroundImage(UIImage(bundleNamed: "circle.fill"), for: .selected)
         return button
     }()
 

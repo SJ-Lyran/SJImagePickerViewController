@@ -19,8 +19,8 @@ class ViewController: UIViewController {
 
     @IBAction func openCamera(_ sender: UIButton) {
         let imagePicker = SJImagePickerController(delegate: self)
-        imagePicker.albumRowCellCount = 4
-        imagePicker.modalPresentationStyle = .fullScreen
+//        imagePicker.albumRowCellCount = 4
+//        imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true, completion: nil)
     }
 }
