@@ -27,8 +27,8 @@ class SJTitleButton: UIButton {
             setTitleColor(.black, for: .normal)
         }
         titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        let normalImage = UIImage(named: "SJImageResource.bundle/chevron.down")?.withRenderingMode(.alwaysTemplate)
-        let selectedImage = UIImage(named: "SJImageResource.bundle/chevron.up")?.withRenderingMode(.alwaysTemplate)
+        let normalImage = UIImage(bundleNamed: "chevron.down")?.withRenderingMode(.alwaysTemplate)
+        let selectedImage = UIImage(bundleNamed: "chevron.up")?.withRenderingMode(.alwaysTemplate)
         setImage(normalImage, for: .normal)
         setImage(selectedImage, for: .selected)
     }

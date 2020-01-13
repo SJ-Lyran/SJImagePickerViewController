@@ -41,10 +41,10 @@ class SJPhotoBrowerViewController: UIViewController {
     @objc private func handleAssets(_ notification: Notification) {
         guard let assets = notification.object as? SJAssetStore else { return }
         if !assets.assets.isEmpty {
-            importItem.title = "(\(assets.assets.count))\("done".localized)"
+            importItem.title = "(\(assets.assets.count))\(Localization.string("done"))"
             navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
-            importItem.title = "done".localized
+            importItem.title = Localization.string("done")
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
         updateUI(assets: assets.assets)
@@ -87,13 +87,13 @@ class SJPhotoBrowerViewController: UIViewController {
         selectedAlbumsView.isHidden = !isHidden
     }
 
-    lazy var importItem = UIBarButtonItem(title: "done".localized, style: .done, target: self, action: #selector(importPhoto))
+    lazy var importItem = UIBarButtonItem(title: Localization.string("done"), style: .done, target: self, action: #selector(importPhoto))
 
     private func setupNavigationItems() {
         navigationItem.rightBarButtonItem = importItem
         let isEmpty = !selectedAssets.assets.isEmpty
         navigationItem.rightBarButtonItem?.isEnabled = isEmpty
-        importItem.title = isEmpty ? "(\(selectedAssets.assets.count))\("done".localized)" : "done".localized
+        importItem.title = isEmpty ? "(\(selectedAssets.assets.count))\(Localization.string("done"))" : Localization.string("done")
     }
 
     @objc private func importPhoto() {
@@ -178,9 +178,9 @@ class SJPhotoBrowerViewController: UIViewController {
 
     lazy var bottomSelectButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "SJImageResource.bundle/circle"), for: .normal)
-        button.setImage(UIImage(named: "SJImageResource.bundle/circle.fill"), for: .selected)
-        button.setTitle("select".localized, for: .normal)
+        button.setImage(UIImage(bundleNamed: "circle"), for: .normal)
+        button.setImage(UIImage(bundleNamed: "circle.fill"), for: .selected)
+        button.setTitle(Localization.string("select"), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
@@ -215,9 +215,9 @@ class SJPhotoBrowerViewController: UIViewController {
         } else {
             let maximum = navigationController?.sjIPC.maximumSelectedPhotoCount ?? 0
             if selectedAssets.assets.count >= maximum {
-                let cancelAction = UIAlertAction(title: "ok".localized, style: .cancel, handler: nil)
+                let cancelAction = UIAlertAction(title: Localization.string("ok"), style: .cancel, handler: nil)
                 UIAlertController.present(in: self, title: nil, message:
-                    "select.maximum".localized(with: maximum), actions: [cancelAction])
+                    Localization.string("select.maximum", number: maximum), actions: [cancelAction])
             } else {
                 selectedAssets.append(asset)
             }
