@@ -5,6 +5,8 @@ SJImagePickerViewController
 [![CocoaPods](http://img.shields.io/cocoapods/v/SJImagePickerController.svg?style=flat)](http://cocoapods.org/pods/SJImagePickerController)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%209%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
+![image](https://github.com/SJ-Lyran/SJImagePickerViewController/blob/master/demo1.gif)   
+
 Installation
 ==============
 
