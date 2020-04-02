@@ -11,17 +11,13 @@ final class SJAlbumsListCell: UITableViewCell {
 
     var asset: SJCollection? {
         didSet {
-            guard let asset = asset else {
-                albumTitle.text = nil
+            albumTitle.text = asset?.albumTitle
+            guard let firstAsset = asset?.assetResult.firstObject else {
                 albumImageView.image = nil
                 return
             }
-            albumTitle.text = asset.albumTitle
-            if let asset = asset.assetResult.firstObject {
-                let itemSize = CGSize(width: contentView.frame.height, height: contentView.frame.height)
-                SJImageManager.requestImage(for: asset, itemSize: itemSize) { [weak self] (image, _) in
-                    self?.albumImageView.image = image
-                }
+            SJImageManager.requestImage(for: firstAsset, itemSize: contentView.frame.size) { [weak self] (image, _) in
+                self?.albumImageView.image = image
             }
         }
     }
@@ -41,7 +37,7 @@ final class SJAlbumsListCell: UITableViewCell {
 
     private func setupUI() {
         albumImageView.backgroundColor = .gray
-        albumImageView.contentMode = .scaleAspectFit
+        albumImageView.contentMode = .scaleAspectFill
         albumImageView.clipsToBounds = true
         contentView.addSubview(albumImageView)
         albumImageView.translatesAutoresizingMaskIntoConstraints = false

@@ -42,10 +42,8 @@ class SJPhotoBrowerViewController: UIViewController {
         guard let assets = notification.object as? SJAssetStore else { return }
         if !assets.assets.isEmpty {
             importItem.title = "(\(assets.assets.count))\(Localization.string("done"))"
-            navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
             importItem.title = Localization.string("done")
-            navigationItem.rightBarButtonItem?.isEnabled = false
         }
         updateUI(assets: assets.assets)
     }
@@ -91,13 +89,14 @@ class SJPhotoBrowerViewController: UIViewController {
 
     private func setupNavigationItems() {
         navigationItem.rightBarButtonItem = importItem
-        let isEmpty = !selectedAssets.assets.isEmpty
-        navigationItem.rightBarButtonItem?.isEnabled = isEmpty
-        importItem.title = isEmpty ? "(\(selectedAssets.assets.count))\(Localization.string("done"))" : Localization.string("done")
+        let isEmpty = selectedAssets.assets.isEmpty
+        let title = isEmpty ? "" : "(\(selectedAssets.assets.count))"
+        importItem.title = isEmpty ? Localization.string("done") : "\(title)\(Localization.string("done"))"
     }
 
     @objc private func importPhoto() {
-        navigationController?.sjIPC.didFinishPicking(selectedAssets.assets)
+        let asset = selectedAssets.assets.isEmpty ? [fetchResult.object(at: currentIndex)] : selectedAssets.assets
+        navigationController?.sjIPC.didFinishPicking(asset)
     }
 
     private func setupDataSourece() {
