@@ -48,7 +48,11 @@ final class SJAlbumsListCell: UITableViewCell {
             albumImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10)
         ])
 
-        albumTitle.textColor = .black
+        if #available(iOS 13.0, *) {
+            albumTitle.textColor = .label
+        } else {
+            albumTitle.textColor = .black
+        }
         albumTitle.font = UIFont.systemFont(ofSize: 14)
         contentView.addSubview(albumTitle)
         albumTitle.translatesAutoresizingMaskIntoConstraints = false

@@ -1,0 +1,8 @@
+"cancel" = "取消";
+"done" = "確定";
+"ok" = "好的";
+"allPhotos" = "所有圖片";
+"privacy.photoLibrary.message" = "APP沒有使用相冊的權限，請修改隱私設置";
+"settings" = "設置";
+"select" = "選擇";
+"select.maximum" = "不能超過%d張";

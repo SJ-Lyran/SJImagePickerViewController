@@ -52,19 +52,57 @@ final class SJAlbumsViewController: UIViewController {
     }
 
     private func checkAuthorizationStatus() {
-        switch PHPhotoLibrary.authorizationStatus() {
-        case .authorized: start()
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization { (status) in
-                DispatchQueue.main.async {
-                    if status == .authorized {
-                        self.start()
-                    } else {
-                        self.askPermission()
+//        switch PHPhotoLibrary.authorizationStatus() {
+//        case .authorized: start()
+//        case .notDetermined:
+//            PHPhotoLibrary.requestAuthorization { (status) in
+//                DispatchQueue.main.async {
+//                    if status == .authorized {
+//                        self.start()
+//                    } else {
+//                        self.askPermission()
+//                    }
+//                }
+//            }
+//        default: self.askPermission()
+//        }
+
+        if #available(iOS 14, *) {
+            let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+            switch status {
+            case .authorized:
+                start()
+            case .limited:
+                askPermission()
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
+                    DispatchQueue.main.async {
+                        switch status {
+                        case .authorized:
+                            self.start()
+                        case .limited:
+                            self.start()
+                        default: self.askPermission()
+                        }
                     }
                 }
+            default: self.askPermission()
             }
-        default: self.askPermission()
+        } else {
+            switch PHPhotoLibrary.authorizationStatus() {
+            case .authorized: start()
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization { (status) in
+                    DispatchQueue.main.async {
+                        if status == .authorized {
+                            self.start()
+                        } else {
+                            self.askPermission()
+                        }
+                    }
+                }
+            default: self.askPermission()
+            }
         }
     }
 

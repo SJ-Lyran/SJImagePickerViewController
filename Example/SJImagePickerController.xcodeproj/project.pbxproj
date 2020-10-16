@@ -51,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0447EF582539FD0600DD6123 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		0447EF592539FD0600DD6123 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0450A63823CC69C2000889EF /* SJImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SJImageResource.bundle; path = ../../SJImagePickerViewController/SJImageResource.bundle; sourceTree = "<group>"; };
 		0450A63A23CC69E4000889EF /* SJAlbumsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAlbumsListCell.swift; path = ../../../SJImagePickerViewController/SJAlbumsListCell.swift; sourceTree = "<group>"; };
 		0450A63B23CC69E4000889EF /* SJPhotoBrowerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJPhotoBrowerCell.swift; path = ../../../SJImagePickerViewController/SJPhotoBrowerCell.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 0474AE9023A0D98600792F34;
 			productRefGroup = 0474AE9A23A0D98600792F34 /* Products */;
@@ -401,6 +404,7 @@
 			children = (
 				0474AEA323A0D98600792F34 /* Base */,
 				048AE2E423C8649A00567D48 /* zh-Hans */,
+				0447EF582539FD0600DD6123 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -410,6 +414,7 @@
 			children = (
 				0474AEA823A0D98C00792F34 /* Base */,
 				048AE2E523C8649A00567D48 /* zh-Hans */,
+				0447EF592539FD0600DD6123 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -539,7 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				DEVELOPMENT_TEAM = 5D84G45NHU;
 				INFOPLIST_FILE = SJImagePickerController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -560,7 +565,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9JC9YUYHWR;
+				DEVELOPMENT_TEAM = 5D84G45NHU;
 				INFOPLIST_FILE = SJImagePickerController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
