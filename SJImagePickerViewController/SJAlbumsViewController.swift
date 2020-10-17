@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import PhotosUI
 
 final class SJAlbumsViewController: UIViewController {
     private var selectedAssets = SJAssetStore()
@@ -26,6 +27,7 @@ final class SJAlbumsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        PHPhotoLibrary.shared().register(self)
         setupNavigationItems()
         setupUI()
         checkAuthorizationStatus()
@@ -56,8 +58,8 @@ final class SJAlbumsViewController: UIViewController {
             let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
             switch status {
             case .authorized: start()
-            case .limited: start()
-//                askPermission()
+            case .limited:
+                start()
             case .notDetermined:
                 PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
                     DispatchQueue.main.async {
@@ -180,6 +182,41 @@ final class SJAlbumsViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+
+        let button = UIButton(type: .custom)
+        if #available(iOS 13.0, *) {
+            button.backgroundColor = .systemBackground
+        } else {
+            button.backgroundColor = .black
+        }
+        button.setTitle("受限的文件", for: .normal)
+        view.addSubview(button)
+        button.addTarget(self, action: #selector(clickLimited), for: .touchUpInside)
+
+        let bottomAnchor: NSLayoutYAxisAnchor
+        if #available(iOS 11.0, *) {
+            bottomAnchor = view.safeAreaLayoutGuide.bottomAnchor
+        } else {
+            bottomAnchor = view.bottomAnchor
+        }
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 60),
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+
+    @objc private func clickLimited() {
+//        PHPhotoLibrary.shared()
+
+//        Use -[PHPhotoLibrary(PhotosUISupport) presentLimitedLibraryPickerFromViewController:] from PhotosUI/PHPhotoLibrary+PhotosUISupport.h to manually present the limited library picker.
+        if #available(iOS 14, *) {
+            PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     lazy var collectionView: UICollectionView = {
@@ -269,6 +306,12 @@ extension SJAlbumsViewController: SJAlbumsCellDelegate {
                 selectedAssets.append(asset)
             }
         }
+    }
+}
+
+extension SJAlbumsViewController: PHPhotoLibraryChangeObserver {
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        print("-------->", changeInstance)
     }
 }
 

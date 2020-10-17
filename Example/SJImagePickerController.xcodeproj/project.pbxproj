@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0450A63923CC69C2000889EF /* SJImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0450A63823CC69C2000889EF /* SJImageResource.bundle */; };
 		0450A63F23CC69E4000889EF /* SJAlbumsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63A23CC69E4000889EF /* SJAlbumsListCell.swift */; };
 		0450A64023CC69E4000889EF /* SJPhotoBrowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63B23CC69E4000889EF /* SJPhotoBrowerCell.swift */; };
 		0450A64123CC69E4000889EF /* SJSelectedAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450A63C23CC69E4000889EF /* SJSelectedAlbumsCell.swift */; };
@@ -31,6 +30,7 @@
 		0474AEA923A0D98C00792F34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474AEA723A0D98C00792F34 /* LaunchScreen.storyboard */; };
 		0474AEB423A0D98D00792F34 /* SJImagePickerControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEB323A0D98D00792F34 /* SJImagePickerControllerTests.swift */; };
 		0474AEBF23A0D98D00792F34 /* SJImagePickerControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEBE23A0D98D00792F34 /* SJImagePickerControllerUITests.swift */; };
+		04EC6922253B3A3F00EA2983 /* ImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04EC6921253B3A3F00EA2983 /* ImageResource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 /* Begin PBXFileReference section */
 		0447EF582539FD0600DD6123 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		0447EF592539FD0600DD6123 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		0450A63823CC69C2000889EF /* SJImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SJImageResource.bundle; path = ../../SJImagePickerViewController/SJImageResource.bundle; sourceTree = "<group>"; };
 		0450A63A23CC69E4000889EF /* SJAlbumsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJAlbumsListCell.swift; path = ../../../SJImagePickerViewController/SJAlbumsListCell.swift; sourceTree = "<group>"; };
 		0450A63B23CC69E4000889EF /* SJPhotoBrowerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJPhotoBrowerCell.swift; path = ../../../SJImagePickerViewController/SJPhotoBrowerCell.swift; sourceTree = "<group>"; };
 		0450A63C23CC69E4000889EF /* SJSelectedAlbumsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJSelectedAlbumsCell.swift; path = ../../../SJImagePickerViewController/SJSelectedAlbumsCell.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		0474AEC023A0D98D00792F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048AE2E423C8649A00567D48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		048AE2E523C8649A00567D48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		04EC6921253B3A3F00EA2983 /* ImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ImageResource.bundle; path = ../../SJImagePickerViewController/ImageResource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 		0474AE9B23A0D98600792F34 /* SJImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				0450A63823CC69C2000889EF /* SJImageResource.bundle */,
+				04EC6921253B3A3F00EA2983 /* ImageResource.bundle */,
 				048AE2E323C81DE900567D48 /* Utils */,
 				0474AEE023A6694A00792F34 /* Model */,
 				0474AEDF23A6694500792F34 /* View */,
@@ -320,8 +320,8 @@
 			files = (
 				0474AEA923A0D98C00792F34 /* LaunchScreen.storyboard in Resources */,
 				0474AEA623A0D98C00792F34 /* Assets.xcassets in Resources */,
-				0450A63923CC69C2000889EF /* SJImageResource.bundle in Resources */,
 				0474AEA423A0D98600792F34 /* Main.storyboard in Resources */,
+				04EC6922253B3A3F00EA2983 /* ImageResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

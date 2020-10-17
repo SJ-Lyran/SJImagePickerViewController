@@ -32,8 +32,8 @@ extension UIAlertController {
 
 extension Bundle {
     static let imageResourceBundle: Bundle = {
-        guard let path = Bundle(for: SJImageManager.self).path(forResource: "SJImageResource", ofType: "bundle"), let bundle = Bundle(path: path) else {
-            fatalError("check SJImageResource.bundle")
+        guard let path = Bundle(for: SJImageManager.self).path(forResource: "ImageResource", ofType: "bundle"), let bundle = Bundle(path: path) else {
+            fatalError("check ImageResource.bundle")
         }
         return bundle
     }()
