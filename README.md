@@ -20,6 +20,11 @@ Installation
 1. Download all the files in the `SJImagePickerController` subdirectory.
 2. Add the source files to your Xcode project.
 3. Add `NSPhotoLibraryUsageDescription`
+4. `info.plist`  insert
+```
+<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+<true/>
+```
 
 Usage
 ==============
