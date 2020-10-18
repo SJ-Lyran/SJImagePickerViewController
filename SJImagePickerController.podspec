@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SJImagePickerController"
-  spec.version      = "1.1.0"
+  spec.version      = "1.1.1"
   spec.summary      = "A simple library that allows you to select images from the photo library"
   spec.homepage     = "https://github.com/SJ-Lyran/SJImagePickerViewController"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
