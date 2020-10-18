@@ -38,6 +38,10 @@ class SJPhotoBrowerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleAssets(_:)), name: SJAssetStore.changedNotification, object: nil)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     @objc private func handleAssets(_ notification: Notification) {
         guard let assets = notification.object as? SJAssetStore else { return }
         if !assets.assets.isEmpty {
@@ -47,7 +51,6 @@ class SJPhotoBrowerViewController: UIViewController {
         }
         updateUI(assets: assets.assets)
     }
-    deinit { NotificationCenter.default.removeObserver(self) }
 
     private func updateUI(assets: [PHAsset]) {
         navigationItem.title = "( \(currentIndex + 1) / \(fetchResult.count) )"

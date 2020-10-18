@@ -11,7 +11,13 @@ import Photos
 class SJAlbumsListView: UIView {
     private let reuseIdentifier = String(describing: SJAlbumsCell.self)
     var completeHandler: ((_ asset: SJCollection?) -> Void)?
-    var photos: [SJCollection] = []
+    var photos: [SJCollection] = [] {
+        didSet {
+            albumsTableView.reloadData()
+        }
+    }
+    let albumsTableView = UITableView(frame: CGRect.zero, style: .plain)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -24,7 +30,6 @@ class SJAlbumsListView: UIView {
 
     private func setupUI() {
         backgroundColor = UIColor(white: 0.0, alpha: 0.5)
-        let albumsTableView = UITableView(frame: CGRect.zero, style: .plain)
         albumsTableView.register(SJAlbumsListCell.self, forCellReuseIdentifier: reuseIdentifier)
         albumsTableView.rowHeight = 90
         albumsTableView.delegate = self
@@ -64,3 +69,5 @@ extension SJAlbumsListView: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
+
+

@@ -9,7 +9,6 @@ import Foundation
 import Photos
 
 class SJCollection {
-    var isSelected = false
     var albumTitle: String
     var assetResult: PHFetchResult<PHAsset>
     init(albumTitle: String, assetResult: PHFetchResult<PHAsset>) {

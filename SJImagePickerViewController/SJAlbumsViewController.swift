@@ -27,10 +27,10 @@ final class SJAlbumsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        PHPhotoLibrary.shared().register(self)
         setupNavigationItems()
         setupUI()
         checkAuthorizationStatus()
+        PHPhotoLibrary.shared().register(self)
     }
 
     private func start() {
@@ -96,12 +96,14 @@ final class SJAlbumsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleAssets(_:)), name: SJAssetStore.changedNotification, object: nil)
     }
 
-    deinit { NotificationCenter.default.removeObserver(self) }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
+    }
 
     @objc private func handleAssets(_ notification: Notification) {
         guard let assets = notification.object as? SJAssetStore else { return }
         if !assets.assets.isEmpty {
-
             doneItem.title = "(\(assets.assets.count))\(Localization.string("done"))"
             navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
@@ -121,7 +123,7 @@ final class SJAlbumsViewController: UIViewController {
                 collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
             }
         case SJAssetStore.removeKey:
-            if assets.assets.count + 1 ==   navigationController?.sjIPC.maximumSelectedPhotoCount {
+            if assets.assets.count + 1 == navigationController?.sjIPC.maximumSelectedPhotoCount {
                 collectionView.reloadData()
             } else {
                 var paths = selectedAssets.assets.map{ IndexPath(item: fetchResult.index(of: $0), section: 0) }
@@ -209,13 +211,8 @@ final class SJAlbumsViewController: UIViewController {
     }
 
     @objc private func clickLimited() {
-//        PHPhotoLibrary.shared()
-
-//        Use -[PHPhotoLibrary(PhotosUISupport) presentLimitedLibraryPickerFromViewController:] from PhotosUI/PHPhotoLibrary+PhotosUISupport.h to manually present the limited library picker.
         if #available(iOS 14, *) {
             PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
-        } else {
-            // Fallback on earlier versions
         }
     }
 
@@ -311,7 +308,53 @@ extension SJAlbumsViewController: SJAlbumsCellDelegate {
 
 extension SJAlbumsViewController: PHPhotoLibraryChangeObserver {
     func photoLibraryDidChange(_ changeInstance: PHChange) {
-        print("-------->", changeInstance)
+        guard let changes = changeInstance.changeDetails(for: fetchResult)
+            else { return }
+
+        // Change notifications may originate from a background queue.
+        // As such, re-dispatch execution to the main queue before acting
+        // on the change, so you can update the UI.
+        DispatchQueue.main.sync {
+            // Hang on to the new fetch result.
+            fetchResult = changes.fetchResultAfterChanges
+            // If we have incremental changes, animate them in the collection view.
+            if changes.hasIncrementalChanges {
+                // Handle removals, insertions, and moves in a batch update.
+                collectionView.performBatchUpdates({
+                    if let removed = changes.removedIndexes, !removed.isEmpty {
+                        collectionView.deleteItems(at: removed.map({ IndexPath(item: $0, section: 0) }))
+                    }
+                    if let inserted = changes.insertedIndexes, !inserted.isEmpty {
+                        collectionView.insertItems(at: inserted.map({ IndexPath(item: $0, section: 0) }))
+                    }
+                    changes.enumerateMoves { fromIndex, toIndex in
+                        self.collectionView.moveItem(at: IndexPath(item: fromIndex, section: 0),
+                                                to: IndexPath(item: toIndex, section: 0))
+                    }
+                })
+                // We are reloading items after the batch update since `PHFetchResultChangeDetails.changedIndexes` refers to
+                // items in the *after* state and not the *before* state as expected by `performBatchUpdates(_:completion:)`.
+                if let changed = changes.changedIndexes, !changed.isEmpty {
+                    collectionView.reloadItems(at: changed.map({ IndexPath(item: $0, section: 0) }))
+                }
+            } else {
+                // Reload the collection view if incremental changes are not available.
+                collectionView.reloadData()
+            }
+
+            // Check each of the three top-level fetches for changes.
+            if let changeDetails = changeInstance.changeDetails(for: photosManager.allPhotos) {
+                // Update the cached fetch result.
+                photosManager.allPhotos = changeDetails.fetchResultAfterChanges
+                // Don't update the table row that always reads "All Photos."
+            }
+            // refresh
+            if let changeDetails = changeInstance.changeDetails(for: photosManager.userCollections) {
+                photosManager.userCollections = changeDetails.fetchResultAfterChanges
+            }
+            photosManager.refreshAssets()
+            albumslist.photos = photosManager.assets
+        }
     }
 }
 

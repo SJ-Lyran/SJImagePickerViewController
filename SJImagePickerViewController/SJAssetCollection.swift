@@ -14,7 +14,6 @@ final class SJAssetCollection {
     init() { getAlbumsList() }
     private func getAlbumsList() {
         let photos = SJCollection(albumTitle: Localization.string("allPhotos"), assetResult: allPhotos)
-        photos.isSelected = true
         assets = [photos]
         userCollections.enumerateObjects(options: .concurrent) { [weak self] (collection, idx, stop) in
             let allPhotosOptions = PHFetchOptions()
@@ -24,6 +23,10 @@ final class SJAssetCollection {
                 self?.assets.append(SJCollection(albumTitle: localizedTitle, assetResult: fetchResult))
             }
         }
+    }
+
+    public func refreshAssets() {
+        getAlbumsList()
     }
 
     lazy var allPhotos: PHFetchResult<PHAsset> = {
