@@ -15,7 +15,7 @@ final class SJAssetCollection {
     private func getAlbumsList() {
         let photos = SJCollection(albumTitle: Localization.string("allPhotos"), assetResult: allPhotos)
         assets = [photos]
-        userCollections.enumerateObjects(options: .concurrent) { [weak self] (collection, idx, stop) in
+        userCollections.enumerateObjects { [weak self] (collection, idx, stop) in
             let allPhotosOptions = PHFetchOptions()
             allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
             let fetchResult = PHAsset.fetchAssets(in: collection as! PHAssetCollection, options: allPhotosOptions)
