@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SJImagePickerController"
-  spec.version      = "1.0.3"
+  spec.version      = "1.1.0"
   spec.summary      = "A simple library that allows you to select images from the photo library"
   spec.homepage     = "https://github.com/SJ-Lyran/SJImagePickerViewController"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -35,7 +35,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.platform     = :ios
-  spec.swift_versions      = ["5.0", "5.1"]
+  spec.swift_versions      = ["5.0", "5.1", "5.3"]
 
   # spec.platform     = :ios, "5.0", "5.1"
 
@@ -61,7 +61,7 @@ Pod::Spec.new do |spec|
 
   # spec.public_header_files = "Classes/**/*.h"
 
-  spec.resources    = "SJImagePickerViewController/SJImageResource.bundle"
+  spec.resources    = "SJImagePickerViewController/ImageResource.bundle"
 
 
 
