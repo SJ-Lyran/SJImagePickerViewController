@@ -17,6 +17,12 @@ final class SJAlbumsViewController: UIViewController {
     private var albumslistHeightConstraintHight: NSLayoutConstraint!
     private var selectedDisabled = false
 
+    private var authorizationStatus = PHAuthorizationStatus.restricted {
+        didSet {
+            setupToolbarStatus()
+        }
+    }
+
     var fetchResult: PHFetchResult<PHAsset> = PHFetchResult() {
         didSet {
             if fetchResult != oldValue {
@@ -57,23 +63,21 @@ final class SJAlbumsViewController: UIViewController {
         if #available(iOS 14, *) {
             let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
             switch status {
-            case .authorized: start()
-            case .limited:
-                start()
+            case .authorized, .limited: start()
             case .notDetermined:
                 PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
                     DispatchQueue.main.async {
                         switch status {
-                        case .authorized:
-                            self.start()
-                        case .limited:
+                        case .authorized, .limited:
                             self.start()
                         default: self.askPermission()
                         }
+                        self.authorizationStatus = status
                     }
                 }
             default: self.askPermission()
             }
+            self.authorizationStatus = status
         } else {
             switch PHPhotoLibrary.authorizationStatus() {
             case .authorized: start()
@@ -185,34 +189,72 @@ final class SJAlbumsViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        let button = UIButton(type: .custom)
-        if #available(iOS 13.0, *) {
-            button.backgroundColor = .systemBackground
-        } else {
-            button.backgroundColor = .black
-        }
-        button.setTitle("受限的文件", for: .normal)
-        view.addSubview(button)
-        button.addTarget(self, action: #selector(clickLimited), for: .touchUpInside)
-
+        view.addSubview(toobar)
         let bottomAnchor: NSLayoutYAxisAnchor
         if #available(iOS 11.0, *) {
             bottomAnchor = view.safeAreaLayoutGuide.bottomAnchor
         } else {
             bottomAnchor = view.bottomAnchor
         }
-        button.translatesAutoresizingMaskIntoConstraints = false
+        toobar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            button.widthAnchor.constraint(equalToConstant: 100),
-            button.heightAnchor.constraint(equalToConstant: 60),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            toobar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            toobar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            toobar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ])
+        setupToolbarStatus()
     }
 
-    @objc private func clickLimited() {
+    private func setupToolbarStatus() {
         if #available(iOS 14, *) {
-            PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
+            if UserDefaults.standard.bool(forKey: .SJIgnoreLimitedKey) {
+                toobar.isHidden = true
+            } else {
+                toobar.isHidden = !(authorizationStatus == .limited)
+            }
+        } else {
+            toobar.isHidden = true
+        }
+    }
+
+    enum ToobarType: Int {
+        case more
+        case close
+        case authorized
+    }
+
+    lazy var toobar: UIToolbar = {
+        let toobar = UIToolbar()
+        toobar.layer.cornerRadius = 8
+        toobar.layer.masksToBounds = true
+        let allPhotos = UIBarButtonItem(title: Localization.string("limited.authorize"), style: .done, target: self, action: #selector(handle(sender:)))
+        allPhotos.tag = ToobarType.authorized.rawValue
+        let closeItems = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(handle(sender:)))
+        closeItems.tintColor = .systemRed
+        closeItems.tag = ToobarType.close.rawValue
+        let morePhotos = UIBarButtonItem(title: Localization.string("limited.more"), style: .done, target: self, action: #selector(handle(sender:)))
+        morePhotos.tag = ToobarType.more.rawValue
+        let flexItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toobar.setItems([closeItems,flexItem, morePhotos, allPhotos], animated: true)
+        return toobar
+    }()
+
+    @objc private func handle(sender: UIBarButtonItem) {
+        guard let type = ToobarType(rawValue: sender.tag) else { return }
+        switch type {
+        case .more:
+            if #available(iOS 14, *) {
+                PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: self)
+            }
+        case .close:
+            UserDefaults.standard.set(true, forKey: .SJIgnoreLimitedKey)
+            setupToolbarStatus()
+        case .authorized:
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+            }
         }
     }
 

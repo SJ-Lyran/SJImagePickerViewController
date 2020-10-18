@@ -6,3 +6,5 @@
 "settings" = "設置";
 "select" = "選擇";
 "select.maximum" = "不能超過%d張";
+"limited.more" = "更多照片";
+"limited.authorize" = "允許訪問 “所有照片”";

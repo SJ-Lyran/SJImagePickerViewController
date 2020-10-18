@@ -53,5 +53,10 @@ extension UIImage {
     }
 }
 
+extension String {
+    static let SJIgnoreLimitedKey = "com.sheng.SJImagePickerController.SJIgnoreLimitedKey"
+}
+
+
 
 
