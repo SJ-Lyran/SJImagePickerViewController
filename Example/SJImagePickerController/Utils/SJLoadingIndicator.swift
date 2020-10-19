@@ -39,7 +39,7 @@ class SJLoadingIndicator: UIView {
         path.addArc(withCenter: aCenter, radius: radius, startAngle: 0, endAngle: 2 * .pi, clockwise: false)
         UIColor.white.set()
         path.stroke()
-        let endAngle = -.pi * 0.5 + (progress * .pi/2)
+        let endAngle = -.pi * 0.5 + (progress * .pi * 2)
         context?.setLineWidth(1)
         context?.move(to: aCenter)
         context?.addLine(to: CGPoint(x: centerX, y: 0))
