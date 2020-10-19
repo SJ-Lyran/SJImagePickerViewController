@@ -31,7 +31,7 @@
 		0474AEB423A0D98D00792F34 /* SJImagePickerControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEB323A0D98D00792F34 /* SJImagePickerControllerTests.swift */; };
 		0474AEBF23A0D98D00792F34 /* SJImagePickerControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474AEBE23A0D98D00792F34 /* SJImagePickerControllerUITests.swift */; };
 		04EC6922253B3A3F00EA2983 /* ImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04EC6921253B3A3F00EA2983 /* ImageResource.bundle */; };
-		04EC69BE253D424D00EA2983 /* SJLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC69BD253D424D00EA2983 /* SJLoadingIndicator.swift */; };
+		04EC69DF253D7E2200EA2983 /* SJLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC69DE253D7E2200EA2983 /* SJLoadingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,7 @@
 		048AE2E423C8649A00567D48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		048AE2E523C8649A00567D48 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		04EC6921253B3A3F00EA2983 /* ImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ImageResource.bundle; path = ../../SJImagePickerViewController/ImageResource.bundle; sourceTree = "<group>"; };
-		04EC69BD253D424D00EA2983 /* SJLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJLoadingIndicator.swift; sourceTree = "<group>"; };
+		04EC69DE253D7E2200EA2983 /* SJLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJLoadingIndicator.swift; path = ../../../SJImagePickerViewController/SJLoadingIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,7 @@
 				0450A65123CC6A07000889EF /* SJImageManager.swift */,
 				0450A64E23CC6A07000889EF /* SJTitleButton.swift */,
 				0450A65623CC6A24000889EF /* SJAssetCollection.swift */,
-				04EC69BD253D424D00EA2983 /* SJLoadingIndicator.swift */,
+				04EC69DE253D7E2200EA2983 /* SJLoadingIndicator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 				0450A65723CC6A24000889EF /* SJAssetCollection.swift in Sources */,
 				0450A64D23CC69F7000889EF /* SJCollection.swift in Sources */,
 				0450A64723CC69EE000889EF /* SJImagePickerController.swift in Sources */,
-				04EC69BE253D424D00EA2983 /* SJLoadingIndicator.swift in Sources */,
+				04EC69DF253D7E2200EA2983 /* SJLoadingIndicator.swift in Sources */,
 				0450A65423CC6A07000889EF /* SJAssetStore.swift in Sources */,
 				0450A64223CC69E4000889EF /* SJAlbumsCell.swift in Sources */,
 				0474AE9D23A0D98600792F34 /* AppDelegate.swift in Sources */,
