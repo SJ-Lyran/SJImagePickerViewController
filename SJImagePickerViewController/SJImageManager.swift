@@ -13,19 +13,23 @@ class SJImageManager {
     static func requestImage(
         for asset: PHAsset,
         itemSize: CGSize,
+        isNetworkAccessAllowed: Bool = false,
+        progressHandler: PHAssetImageProgressHandler?,
         resultHandler: @escaping (UIImage?, [AnyHashable : Any]?) -> Void) {
         let scale: CGFloat = 2
         let targetSize = CGSize(width: itemSize.width * scale, height: itemSize.height * scale)
         let options = PHImageRequestOptions()
         options.resizeMode = .fast
-        PHCachingImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: nil, resultHandler: resultHandler)
+        options.isNetworkAccessAllowed = isNetworkAccessAllowed
+        options.progressHandler = progressHandler
+        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options, resultHandler: resultHandler)
     }
 
     static func requestImageData(
         for asset: PHAsset,
         options: PHImageRequestOptions?,
         resultHandler: @escaping (Data?, String?, UIImage.Orientation, [AnyHashable : Any]?) -> Void) {
-        PHCachingImageManager().requestImageData(for: asset, options: options, resultHandler: resultHandler)
+        PHImageManager().requestImageData(for: asset, options: options, resultHandler: resultHandler)
     }
 
     static func fetchAssets(
@@ -34,6 +38,8 @@ class SJImageManager {
         itemSize: CGSize) -> [UIImage] {
         let imageManager = PHImageManager.default()
         let options = PHImageRequestOptions()
+        options.isNetworkAccessAllowed = true
+        options.deliveryMode = .highQualityFormat
         options.isSynchronous = true
         var images = [UIImage]()
         assets.forEach { (item) in
@@ -51,6 +57,8 @@ class SJImageManager {
         let imageManager = PHImageManager.default()
         let options = PHImageRequestOptions()
         options.isSynchronous = true
+        options.isNetworkAccessAllowed = true
+        options.deliveryMode = .highQualityFormat
         var allData = [Data]()
         assets.forEach { (item) in
             imageManager.requestImageData(for: item, options: options) {  (data, a, orientation, info) in

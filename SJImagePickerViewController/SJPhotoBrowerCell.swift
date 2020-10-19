@@ -17,7 +17,13 @@ class SJPhotoBrowerCell: UICollectionViewCell {
                 return
             }
             representedAssetIdentifier = asset.localIdentifier
-            SJImageManager.requestImage(for: asset, itemSize: bounds.size) { [weak self] (image, _) in
+            SJImageManager.requestImage(for: asset, itemSize: bounds.size, isNetworkAccessAllowed: true) { [weak self] (progress, error, _, _) in
+                DispatchQueue.main.sync {
+                    self?.progressView.isHidden = false
+                    self?.progressView.progress = CGFloat(progress)
+                }
+            } resultHandler: { [weak self] (image, info) in
+                self?.progressView.isHidden = true
                 if self?.representedAssetIdentifier == asset.localIdentifier {
                     self?.photoImageView.image = image
                 }
@@ -47,5 +53,21 @@ class SJPhotoBrowerCell: UICollectionViewCell {
             photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        contentView.addSubview(progressView)
+        progressView.isHidden = true
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        let topAnchor: NSLayoutYAxisAnchor
+        if #available(iOS 11.0, *) {
+            topAnchor = contentView.safeAreaLayoutGuide.topAnchor
+        } else {
+            topAnchor = contentView.topAnchor
+        }
+        NSLayoutConstraint.activate([
+            progressView.widthAnchor.constraint(equalToConstant: 32),
+            progressView.heightAnchor.constraint(equalToConstant: 32),
+            progressView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -14),
+            progressView.topAnchor.constraint(equalTo: topAnchor, constant: 14)
+        ])
     }
+    lazy var progressView = SJLoadingIndicator()
 }

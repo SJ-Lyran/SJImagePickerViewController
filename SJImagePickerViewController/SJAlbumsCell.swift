@@ -25,7 +25,7 @@ class SJAlbumsCell: UICollectionViewCell {
                 return
             }
             representedAssetIdentifier = asset.asset.localIdentifier
-            SJImageManager.requestImage(for: asset.asset, itemSize: bounds.size) { [weak self] (image, _) in
+            SJImageManager.requestImage(for: asset.asset, itemSize: bounds.size, progressHandler: nil) { [weak self] (image, _) in
                 guard self?.representedAssetIdentifier == asset.asset.localIdentifier else { return }
                 self?.thumbnailImageView.image = image
             }

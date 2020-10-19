@@ -16,7 +16,7 @@ final class SJAlbumsListCell: UITableViewCell {
                 albumImageView.image = nil
                 return
             }
-            SJImageManager.requestImage(for: firstAsset, itemSize: contentView.frame.size) { [weak self] (image, _) in
+            SJImageManager.requestImage(for: firstAsset, itemSize: contentView.frame.size, progressHandler: nil) { [weak self] (image, _) in
                 self?.albumImageView.image = image
             }
         }
