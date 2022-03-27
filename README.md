@@ -3,7 +3,7 @@ SJImagePickerViewController
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/SJ-Lyran/SJImagePickerViewController/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/SJImagePickerController.svg?style=flat)](http://cocoapods.org/pods/SJImagePickerController)&nbsp;
-[![Support](https://img.shields.io/badge/support-iOS%209%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+[![Support](https://img.shields.io/badge/support-iOS%2010%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
 ![image](https://github.com/SJ-Lyran/SJImagePickerViewController/blob/master/demo1.gif)   
 
@@ -15,6 +15,15 @@ Installation
 1. Add `pod 'SJImagePickerController'` to your Podfile.
 2. Run `pod install` or `pod update`.
 3. Import SJImagePickerController.
+
+### Swift Package Manager (SPM)
+
+let package = Package(
+    …
+    dependencies: [
+        .package(url: "https://github.com/SJ-Lyran/SJImagePickerViewController.git", from: "1.2.2"),
+    ],
+)
 
 ### Manually
 1. Download all the files in the `SJImagePickerController` subdirectory.
