@@ -1,0 +1,6 @@
+framework module Pods_SJImagePickerController_Tests {
+  umbrella header "Pods-SJImagePickerController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

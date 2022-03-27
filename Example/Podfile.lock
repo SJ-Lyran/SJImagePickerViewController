@@ -1,0 +1,16 @@
+PODS:
+  - SJImagePickerController (1.2.2)
+
+DEPENDENCIES:
+  - SJImagePickerController (from `../`)
+
+EXTERNAL SOURCES:
+  SJImagePickerController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SJImagePickerController: fc8bc3117c2a1710259aec8c3abfeeab981961e4
+
+PODFILE CHECKSUM: b7b12697810bce3ba263ad3aaca2e55aa698eb9d
+
+COCOAPODS: 1.11.3

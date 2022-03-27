@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+
+  Copyright © 2020 sheng. All rights reserved.
+*/
+"cancel" = "取消";
+"done" = "确定";
+"ok" = "好的";
+"allPhotos" = "所有图片";
+"privacy.photoLibrary.message" = "APP没有使用相册的权限，请修改隐私设置";
+"settings" = "设置";
+"select" = "选择";
+"select.maximum" = "不能超过%d张";
+"limited.more" = "更多照片";
+"limited.authorize" = "允许访问 “所有照片”";
+

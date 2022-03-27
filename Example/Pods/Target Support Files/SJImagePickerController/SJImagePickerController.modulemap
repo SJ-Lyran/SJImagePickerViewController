@@ -1,0 +1,6 @@
+module SJImagePickerController {
+  umbrella header "SJImagePickerController-umbrella.h"
+
+  export *
+  module * { export * }
+}

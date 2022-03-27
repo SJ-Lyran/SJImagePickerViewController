@@ -1,3 +1,6 @@
 
-/* Class = "UIButton"; normalTitle = "打开相册"; ObjectID = "MjG-4S-boA"; */
-"MjG-4S-boA.normalTitle" = "打开相册";
+/* Class = "UIButton"; configuration.title = "present"; ObjectID = "KNv-tC-Gb0"; */
+"KNv-tC-Gb0.configuration.title" = "present";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KNv-tC-Gb0"; */
+"KNv-tC-Gb0.normalTitle" = "Button";
