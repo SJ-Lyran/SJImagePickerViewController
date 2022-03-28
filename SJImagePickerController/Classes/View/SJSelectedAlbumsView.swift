@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-protocol SJSelectedAlbumsViewDelegate: class {
+protocol SJSelectedAlbumsViewDelegate: AnyObject {
     func didSelect(item: PHAsset)
     func didDelete(item: PHAsset)
 }

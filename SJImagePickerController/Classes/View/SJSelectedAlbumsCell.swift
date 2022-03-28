@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-protocol SJSelectedAlbumsCellDelegate: class {
+protocol SJSelectedAlbumsCellDelegate: AnyObject {
     func didDelete(cell: SJSelectedAlbumsCell)
 }
 

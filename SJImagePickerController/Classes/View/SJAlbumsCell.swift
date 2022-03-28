@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-protocol SJAlbumsCellDelegate: class {
+protocol SJAlbumsCellDelegate: AnyObject {
     func tap(item: SJAlbumsCell, asset: PHAsset)
 }
 
