@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SJImagePickerController'
-  s.version          = '1.2.2'
+  s.version          = '1.2.3'
   s.summary          = 'A simple library that allows you to select images from the photo library'
 
 # This description is used to generate tags and improve search results.
