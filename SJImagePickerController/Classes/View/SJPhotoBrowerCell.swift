@@ -18,7 +18,7 @@ class SJPhotoBrowerCell: UICollectionViewCell {
             }
             representedAssetIdentifier = asset.localIdentifier
             SJImageManager.requestImage(for: asset, itemSize: bounds.size, isNetworkAccessAllowed: true) { [weak self] (progress, error, _, _) in
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
                     self?.progressView.isHidden = false
                     self?.progressView.progress = CGFloat(progress)
                 }
